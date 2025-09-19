@@ -20,12 +20,6 @@ class Solution {
                 board[i][j]=1;
             }
         }
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(board[i][j] + " ");
-            }
-            System.out.println();
-        }
     }
     static int game(int[][] boards,int i,int j,int m,int n)
     {
