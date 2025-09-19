@@ -3,9 +3,8 @@ class Solution {
           int reachable = 0; // farthest index we can reach
         
         for (int i = 0; i < nums.length; i++) {
-            if (i > reachable) {
-                return false; // if current index is not reachable
-            }
+            if (i > reachable) 
+                return false;
             reachable = Math.max(reachable, i + nums[i]);
         }
         
