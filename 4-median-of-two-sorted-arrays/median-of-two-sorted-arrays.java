@@ -10,12 +10,10 @@ class Solution {
             sum[i]=nums2[i-n];
         }
         Arrays.sort(sum);
-        int left=0,right=sum.length;
-            int mid=(left+right);
-            if(mid%2==1)
-               return(sum[mid/2]/1.0);
+        int right=sum.length;
+            if(right%2==1)
+               return(sum[right/2]/1.0);
             else
-                return((sum[mid/2]+sum[mid/2-1])/2.0);
-       
+                return((sum[right/2]+sum[right/2-1])/2.0);
     }
 }
