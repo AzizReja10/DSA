@@ -3,9 +3,8 @@ class Solution {
      if(x<0)
      return(false);
      StringBuilder ans=new StringBuilder(String.valueOf(x));
-     StringBuilder two=new StringBuilder(ans);
-     two.reverse();
-     boolean check=ans.toString().equals(two.toString());
+     ans.reverse();
+     boolean check=ans.toString().equals(String.valueOf(x));
      return(check);   
     }
 }
