@@ -11,7 +11,7 @@ class Solution {
         {
             left=nums[left];
             right=nums[right];
-        }
+        }//both left and right will show same value
         return(left);
     }
 }
