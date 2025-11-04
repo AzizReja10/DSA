@@ -14,8 +14,8 @@ class Solution {
             return;
         }
         char ch=digits.charAt(len);
-        String str=letters[ch-'0'];
-        for(char c:str.toCharArray()){
+        StringBuilder str=new StringBuilder(letters[ch-'0']);
+        for(char c:str.toString().toCharArray()){
             gen.append(c);
             comb(len+1,digits,gen);
             gen.deleteCharAt(gen.length()-1);
