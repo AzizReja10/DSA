@@ -11,7 +11,7 @@ class Solution {
                 if(!ob.isEmpty())
                 ob.pop();
             }
-            else if(!p[i].equals("")&&!p[i].equals(".")&&!p[i].equals(".."))
+            else if(!p[i].isEmpty()&&!p[i].equals(".")&&!p[i].equals(".."))
             ob.push(p[i]);
         } 
         if(ob.isEmpty())
