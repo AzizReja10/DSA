@@ -1,23 +1,19 @@
-import java.util.*;
 class Solution {
     public int nthUglyNumber(int n) {
-        if (n == 1) return 1;
-        PriorityQueue<Long> heap = new PriorityQueue<>();
-        Set<Long> seen = new HashSet<>();
-        int[] primes = {2, 3, 5};
-        heap.offer(1L);
-        seen.add(1L);
-        long currentUgly = 1L;
-        for (int i = 0; i < n; i++) {
-            currentUgly = heap.poll(); 
-            for (int prime : primes) {
-                long next = currentUgly * prime;
-                if (!seen.contains(next)) {
-                    seen.add(next);
-                    heap.offer(next);
-                }
-            }
+        if (n <= 0) return 0;
+        int[] ugly = new int[n];
+        ugly[0] = 1;
+        int i2 = 0, i3 = 0, i5 = 0;
+        for (int i = 1; i < n; i++) {
+            int next2 = ugly[i2] * 2;
+            int next3 = ugly[i3] * 3;
+            int next5 = ugly[i5] * 5;
+            int nextUgly = Math.min(next2, Math.min(next3, next5));
+            ugly[i] = nextUgly;
+            if (nextUgly == next2) i2++;
+            if (nextUgly == next3) i3++;
+            if (nextUgly == next5) i5++;
         }
-        return (int) currentUgly;
+        return ugly[n - 1];
     }
 }
